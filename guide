@@ -4,3 +4,8 @@ git commit -m "new variable added"
 чтобы выгрузить git push
 
 чтобы загрузить git pull
+
+чтобы вводить число в терминале пишешь
+clang++ -o main название файла.cpp
+./название файла
+

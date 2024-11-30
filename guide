@@ -1,3 +1,6 @@
 в терминале написать 
+git add .
+git commit -m "new variable added"
 чтобы выгрузить git push
+
 чтобы загрузить git pull

@@ -177,7 +177,7 @@ void Task6() {
 	
 	int a1 = int(a), b1 = int(b), c1 = int(c);
 	float x = xn;
-	int ee = (((a1 && b1)^c1)!=0);
+	int ee = (((a1 & b1)^c1)!=0);
 	while (x <= xk) {
 		if (ee)
 			cout << setw(10)<<x << setw(10) << Task6_2(x, a, b, c) << endl;

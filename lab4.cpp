@@ -1,21 +1,21 @@
 #include <ctime>
 #include <iostream>
 #include <cmath>
-
+#include <time.h>
 using namespace std;
 
-void task1(unsigned n);
-void task2(unsigned n);
-void task3(unsigned n);
-void task4(unsigned n);
-void task5(unsigned n);
-void task6(unsigned n);
-void task7(unsigned n);
-void task8(unsigned n);
-void task9(unsigned n);
-void task10(unsigned n);
+void Task1(unsigned n);
+void Task2(unsigned n);
+void Task3(unsigned n);
+void Task4(unsigned n);
+void Task5(unsigned n);
+void Task6(unsigned n);
+void Task7(unsigned n);
+void Task8(unsigned n);
+void Task9(unsigned n);
+void Task10(unsigned n);
 
-int* createIntArray(unsigned length);
+void IntArray(int* array, unsigned length);
 float* createFloatArray(unsigned length);
 void printArrayInt(int array[], unsigned length);
 void printArrayFloat(float array[], unsigned length);
@@ -30,27 +30,32 @@ int intBinarySearch(int array[], unsigned size, int key);
 int helpIntBinarySearch(int array[], unsigned size, int key, unsigned first, unsigned last);
 
 int main() {
-    srand(time(0));
+  
     unsigned n;
     cout<< "Введите n ";
     cin  >> n;
-
-    task2(n);
+    Task2(n);
 }
 
-void task1(unsigned n) {
-    int *array = createIntArray(n);
+void Task1(unsigned n) {
+    int *array = new int[n];
+    IntArray(array, n );
     printArrayInt(array, n);
     delete[] array;
 }
-
-void task2(unsigned n) {
+void IntArray(int* array ,unsigned length) {
+    for (unsigned i = 0; i < length; i++)
+        array[i] = rand() - RAND_MAX/2;
+    
+}
+/*
+void Task2(unsigned n) {
     float *array = createFloatArray(n);
     printArrayFloat(array, n);
     delete[] array;
 }
 
-void task3(unsigned n) {
+void Task3(unsigned n) {
     float *array = createFloatArrayFromInput(n);
     float M = 1;
     for (unsigned i = 0; i < n; i+=2)
@@ -59,7 +64,7 @@ void task3(unsigned n) {
     delete[] array;
 }
 
-void task4(unsigned n) {
+void Task4(unsigned n) {
     int* array = createIntArrayFromInput(n);
 
     int first = -1;
@@ -90,7 +95,7 @@ void task4(unsigned n) {
     delete[] array;
 }
 
-void task5(unsigned n) {
+void Task5(unsigned n) {
     float *array = createFloatArrayFromInput(n);
     for (unsigned i = 0; i < n; i++) 
         if (array[i] > 0) 
@@ -99,7 +104,7 @@ void task5(unsigned n) {
     delete[] array;
 }
 
-void task6(unsigned n) {
+void Task6(unsigned n) {
     float *array = createFloatArrayFromInput(n);
     float findEl;
     cout << "Введите элемент, который нужно найти: ";
@@ -114,14 +119,14 @@ void task6(unsigned n) {
     delete[] array;
 }
 
-void task7(unsigned n) {
+void Task7(unsigned n) {
     float *array = createFloatArrayFromInput(n);
     floatSelectionSort(array, n);
     printArrayFloat(array, n);
     delete[] array;
 }
 
-void task8(unsigned n) {
+void Task8(unsigned n) {
     float *array = createFloatArrayFromInput(n);
     for (unsigned i = 0; i < n; i++) {
         unsigned index = i;
@@ -138,14 +143,14 @@ void task8(unsigned n) {
     delete[] array;
 }
 
-void task9(unsigned n) {
+void Task9(unsigned n) {
     int *array = createIntArrayFromInput(n);
     intFastSort(array, n);
     printArrayInt(array, n);
     delete[] array;
 }
 
-void task10(unsigned n) {
+void Task10(unsigned n) {
     int *array = createIntArrayFromInput(n);
     int key;
     cout << "Введите число, которое надо найти: ";
@@ -161,12 +166,7 @@ void task10(unsigned n) {
 }
 
 
-int* createIntArray(unsigned length) {
-    int *array = new int[length];
-    for (unsigned i = 0; i < length; i++)
-        array[i] = rand() - RAND_MAX/2;
-    return array;
-}
+
 
 float* createFloatArray(unsigned length) {
     float *array = new float[length];
@@ -268,3 +268,4 @@ int helpIntBinarySearch(int array[], unsigned size, int key, unsigned first, uns
     }
     return -1;
 }
+*/

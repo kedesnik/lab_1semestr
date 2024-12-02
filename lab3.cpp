@@ -149,11 +149,12 @@ int Task4_1(int a, int b){
 
 void Task5() {
 	float eps, x;
-	int n;
+	//int n;
+	int n=1;
 	cout << "Введите число x "; cin >> x;
 	cout << "Введите число eps "; cin >> eps;
-	cout << "Введите число "; cin >> n;
-	//int n=0;
+	//cout << "Введите число "; cin >> n;
+	
 	float x1 = Task5_1(n, x, eps);
 	float y = 1, a = 0;
 	while (abs(y - a) >= eps) {

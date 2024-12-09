@@ -16,15 +16,15 @@ void SortChet(float array2[], unsigned len);
 void QuickSort(int array[], unsigned len);
 int BinPoisk(int array2[], unsigned len, int x);
 void Task1(int* array ,unsigned n);
-void Task2();
-void Task3();
-void Task4();
-void Task5();
-void Task6();
-void Task7();
-void Task8();
-void Task9();
-void Task10();
+void Task2(float* array2, unsigned n);
+void Task3(float* array2, unsigned n);
+void Task4(int* array ,unsigned n);
+void Task5(float* array2, unsigned n);
+void Task6(float* array2, unsigned n);
+void Task7(float* array2, unsigned n);
+void Task8(float* array2, unsigned n);
+void Task9(int* array ,unsigned n);
+void Task10(int* array ,unsigned n);
 using namespace std;
 int main() {
     setlocale(LC_ALL, "");
@@ -41,35 +41,33 @@ int main() {
 case 1:
 	Task1(array,n);
 	break;
-    /*
 case 2:
-	Task2();
+	Task2(array2,n);
 	break;
 case 3:
-	Task3();
+	Task3(array2,n);
 	break;
 case 4:
-	Task4();
+	Task4(array,n);
 	break;
 case 5:
-	Task5();
+	Task5(array2,n);
 	break;
 case 6:
-	Task6();
+	Task6(array2,n);
 	break;
 case 7:
-	Task7();
+	Task7(array2,n);
 	break;
 case 8:
-	Task8();
+	Task8(array2,n);
 	break;
 case 9:
-	Task9();
+	Task9(array,n);
 	break;
 case 10:
-	Task10();
+	Task10(array,n);
 	break;
-    */
 
 }
     
@@ -83,85 +81,101 @@ case 10:
     PrintArray(array, n);
     delete[] array;
     }
-   /*
+
     //2
-    void Task2(float* array2){
+    void Task2(float* array2, unsigned n){
     DoVArray(array2, n);
     PrintVArray(array2, n);
     delete[] array2;
     }
    
     //3
-    DoVArray(array, n);
-    PrintVArray(array, n);
-    cout << ProChet(array, n) << endl;
-    delete[] array;
-    */
-   /*
+    void Task3(float* array2, unsigned n){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
+    cout << ProChet(array2, n) << endl;
+    delete[] array2;
+    }
+
+
     //4
+    void Task4(int* array, unsigned n){
     DoArray(array, n);
     PrintArray(array, n);
     int S = Sum(array, n);
     if (S == 0)
-        cout << "no sum" << endl;
+        cout << "нет суммы" << endl;
     else
         cout << S << endl;
     delete[] array;
-    */
+    }
+
     //5
-    /*DoVArray(array, n);
-    PrintVArray(array, n);
-    Men(array, n);
-    PrintVArray(array, n);
-    delete[] array;
-    */
+    void Task5(float* array2, unsigned n){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
+    Men(array2, n);
+    PrintVArray(array2, n);
+    delete[] array2;
+    }
+
     //6
-    /*DoVArray(array, n);
-    PrintVArray(array, n);
+    void Task6(float* array2, unsigned n){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
     float x, p;
-    cout << "Vvedite X: ";
+    cout << "Введите X: ";
     cin >> x;
-    p = Poisk(array, n, x);
+    p = Poisk(array2, n, x);
     if (p != -1)
-        cout << "Nomer: " << p << endl;
+        cout << "Номер: " << p << endl;
     else
-        cout << "No element" << endl;
-    delete[] array;
-    */
+        cout << "Нет элемента" << endl;
+    delete[] array2;
+    }
+
     //7
-    /*DoVArray(array, n);
-    PrintVArray(array, n);
-    Sort(array, n);
-    PrintVArray(array, n);
-    delete[] array;
-    */
+    void Task7(float* array2, unsigned n){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
+    Sort(array2, n);
+    PrintVArray(array2, n);
+    delete[] array2;
+    }
+
     //8
-    /*DoVArray(array, n);
-    PrintVArray(array, n);
-    SortChet(array, n);
-    PrintVArray(array, n);
-    delete[] array;
-    */
+    void Task8(float* array2, unsigned n){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
+    SortChet(array2, n);
+    PrintVArray(array2, n);
+    delete[] array2;
+    }
+
     //9
-    /*DoArray(array, n);
+    void Task9(int* array, unsigned n){
+    DoArray(array, n);
     PrintArray(array, n);
     QuickSort(array, n);
     PrintArray(array, n);
     delete[] array;
-    */
+    }
+
     //10
-    /*DoArray(array, n);
+    void Task10(int* array, unsigned n){
+    DoArray(array, n);
     QuickSort(array, n);
     PrintArray(array, n);
     int x,p;
-    cout << "Vvedite X: ";
+    cout << "Введите X: ";
     cin >> x;
     p = BinPoisk(array, n, x);
     if (p != -1)
-        cout << "Nomer " << p << endl;
+        cout << "Номер " << p << endl;
     else
-        cout << "No element" << endl;
-    */
+        cout << "Нет элемента" << endl;
+    }
+
 
 
 

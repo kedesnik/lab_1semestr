@@ -4,45 +4,102 @@
 
 void DoArray(int* array, unsigned len);
 void PrintArray(int array[], unsigned len);
-void DoVArray(float* array, unsigned len);
-void PrintVArray(float array[], unsigned len);
-float ProChet(float array[], unsigned len);
+void DoVArray(float* array2, unsigned len);
+void PrintVArray(float array2[], unsigned len);
+float ProChet(float array2[], unsigned len);
 int Sum(int array[], unsigned len);
-void Men(float array[], unsigned len);
+void Men(float array2[], unsigned len);
 float Poisk(float array[], unsigned len, float x);
-void Sort(float array[], unsigned len);
+void Sort(float array2[], unsigned len);
 bool chet(float num);
-void SortChet(float array[], unsigned len);
+void SortChet(float array2[], unsigned len);
 void QuickSort(int array[], unsigned len);
-int BinPoisk(int array[], unsigned len, int x);
-
+int BinPoisk(int array2[], unsigned len, int x);
+void Task1(int* array ,unsigned n);
+void Task2();
+void Task3();
+void Task4();
+void Task5();
+void Task6();
+void Task7();
+void Task8();
+void Task9();
+void Task10();
 using namespace std;
 int main() {
-    srand(time(0));
+    setlocale(LC_ALL, "");
+    int p;
+	cout<<"Какую задачу? ";cin>>p;
+	
+	srand(time(0));
     unsigned n;
     cin >> n;
 
-    float* array = new float[n];
-    //int* array = new int[n];
+    float* array2 = new float[n];
+    int* array = new int[n];
+    switch (p) {	
+case 1:
+	Task1(array,n);
+	break;
+    /*
+case 2:
+	Task2();
+	break;
+case 3:
+	Task3();
+	break;
+case 4:
+	Task4();
+	break;
+case 5:
+	Task5();
+	break;
+case 6:
+	Task6();
+	break;
+case 7:
+	Task7();
+	break;
+case 8:
+	Task8();
+	break;
+case 9:
+	Task9();
+	break;
+case 10:
+	Task10();
+	break;
+    */
 
+}
+    
+    
+}
+    
     //1
-    /*DoArray(array, n);
+    void Task1(int* array, unsigned n){
+    //int* array = new int[n];
+    DoArray(array, n);
     PrintArray(array, n);
     delete[] array;
-    */
+    }
+   /*
     //2
-    /*DoVArray(array, n);
-    PrintVArray(array, n);
-    delete[] array;
-    */
+    void Task2(float* array2){
+    DoVArray(array2, n);
+    PrintVArray(array2, n);
+    delete[] array2;
+    }
+   
     //3
-    /*DoVArray(array, n);
+    DoVArray(array, n);
     PrintVArray(array, n);
     cout << ProChet(array, n) << endl;
     delete[] array;
     */
+   /*
     //4
-    /*DoArray(array, n);
+    DoArray(array, n);
     PrintArray(array, n);
     int S = Sum(array, n);
     if (S == 0)
@@ -106,7 +163,7 @@ int main() {
         cout << "No element" << endl;
     */
 
-}
+
 
 void DoArray(int *array, unsigned len) {
     for (unsigned i = 0; i < len; i++)
@@ -116,77 +173,76 @@ void PrintArray(int array[], unsigned len) {
     for (unsigned i = 0; i < len; i++)
         cout << i << ". " << array[i] << endl;
 }
-void DoVArray(float *array, unsigned len) {
+void DoVArray(float *array2, unsigned len) {
     for (unsigned i = 0; i < len; i++)
-        array[i] = rand() - RAND_MAX / 2 + ((float)rand() / (float)rand());
+        array2[i] = rand() - RAND_MAX / 2 + ((float)rand() / (float)rand());
 }
-void PrintVArray(float array[], unsigned len) {
+void PrintVArray(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++)
-        cout << i << ". " << array[i] << endl;
+        cout << i << ". " << array2[i] << endl;
 }
-float ProChet(float array[], unsigned len) {
+float ProChet(float array2[], unsigned len) {
     float P = 1;
     for (unsigned i = 0; i < len; i += 2)
-        P *= array[i];
+        P += abs(array2[i]);
     return P;
 }
 int Sum(int array[], unsigned len) {
     int n1 = -1;
-    int n2 = -1;
+    
     for (unsigned i = 0; i < len; i++)
-        if (array[i] < 0)
+        if (array[i] < 0){
             if (n1 == -1)
                 n1 = i;
-            else
-                n2 = i;
-
-    if (n1 == -1 || n2 == -1) {
+        }
+            
+    if (n1 == -1 ) {
         return 0;
     }
     int S = 0;
-    for (unsigned i = n1 + 1; i < n2; i++)
+    for (unsigned i = n1 + 1;i < len;  i++)
         S += array[i];
     return S;
 }
-void Men(float array[], unsigned len) {
+void Men(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++)
-        if (array[i] > 0)
-            array[i] = -rand() - ((float)rand() / (float)rand());
+        if (array2[i] > 0)
+            array2[i] = -rand() - ((float)rand() / (float)rand());
 }
-float Poisk(float array[], unsigned len, float x) {
+float Poisk(float array2[], unsigned len, float x) {
     for (unsigned i = 0; i < len; i++) {
         float eps = 0.1;
-        if (fabs(array[i] - x) <= eps)
+        if (fabs(array2[i] - x) <= eps)
             return i;
     }
     return -1;
 }
-void Sort(float array[], unsigned len) {
+void Sort(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++) {
         int n1 = i;
         for (unsigned j = i + 1; j < len; j++) {
-            if (array[j] < array[n1]) {
+            if (array2[j] < array2[n1]) {
                 n1 = j;
             }
         }
         if (n1 != i) {
-            float buf = array[i];
-            array[i] = array[n1];
-            array[n1] = buf;
+            float buf = array2[i];
+            array2[i] = array2[n1];
+            array2[n1] = buf;
         }
     }
 }
 bool chet(float num) {
     return (int)num % 2 == 0;
 }
-void SortChet(float array[], unsigned len) {
+void SortChet(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++) {
-        if (chet(array[i])) continue;
+        if (chet(array2[i])) continue;
         for (unsigned j = i + 1; j < len; j++) {
-            if (chet(array[j])) {
-                float buf = array[i];
-                array[i] = array[j];
-                array[j] = buf;
+            if (chet(array2[j])) {
+                float buf = array2[i];
+                array2[i] = array2[j];
+                array2[j] = buf;
             }
         }
     }

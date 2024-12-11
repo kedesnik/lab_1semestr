@@ -15,10 +15,15 @@ bool chet(float num);
 void SortChet(float array2[], unsigned len);
 void QuickSort(int array[], unsigned len);
 int BinPoisk(int array2[], unsigned len, int x);
+// сдано
 void Task1(int* array ,unsigned n);
+//сдано
 void Task2(float* array2, unsigned n);
+//переделано
 void Task3(float* array2, unsigned n);
+//переделано
 void Task4(int* array ,unsigned n);
+
 void Task5(float* array2, unsigned n);
 void Task6(float* array2, unsigned n);
 void Task7(float* array2, unsigned n);
@@ -218,11 +223,13 @@ int Sum(int array[], unsigned len) {
         S += array[i];
     return S;
 }
+
 void Men(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++)
         if (array2[i] > 0)
             array2[i] = -rand() - ((float)rand() / (float)rand());
 }
+
 float Poisk(float array2[], unsigned len, float x) {
     for (unsigned i = 0; i < len; i++) {
         float eps = 0.1;

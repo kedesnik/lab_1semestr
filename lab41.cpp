@@ -8,11 +8,11 @@ void DoVArray(float* array2, unsigned len);
 void PrintVArray(float array2[], unsigned len);
 float ProChet(float array2[], unsigned len);
 int Sum(int array[], unsigned len);
-void Men(float array2[], unsigned len);
+void Men(float array2[], unsigned len, double C, double eps);
 float Poisk(float array[], unsigned len, float x);
 void Sort(float array2[], unsigned len);
 bool chet(float num);
-void SortChet(float array2[], unsigned len);
+void Sorting(float array2[], unsigned len, float C, float eps);
 void QuickSort(int array[], unsigned len);
 int BinPoisk(int array2[], unsigned len, int x);
 // сдано
@@ -23,14 +23,17 @@ void Task2(float* array2, unsigned n);
 void Task3(float* array2, unsigned n);
 //переделано
 void Task4(int* array ,unsigned n);
-
+//вроде переделано
 void Task5(float* array2, unsigned n);
+
 void Task6(float* array2, unsigned n);
 void Task7(float* array2, unsigned n);
 void Task8(float* array2, unsigned n);
 void Task9(int* array ,unsigned n);
 void Task10(int* array ,unsigned n);
 using namespace std;
+
+//у саши 14 вариант
 int main() {
     setlocale(LC_ALL, "");
     int p;
@@ -117,9 +120,14 @@ case 10:
 
     //5
     void Task5(float* array2, unsigned n){
+    double C, eps;
+    cout << "Введите число C: ";
+    cin >> C;
+    cout << "Введите eps: ";
+    cin >> eps;
     DoVArray(array2, n);
     PrintVArray(array2, n);
-    Men(array2, n);
+    Men(array2, n, C, eps);
     PrintVArray(array2, n);
     delete[] array2;
     }
@@ -150,9 +158,14 @@ case 10:
 
     //8
     void Task8(float* array2, unsigned n){
+    float C, eps;
+    std::cout << "Введите число C: ";
+    std::cin >> C;
+    std::cout << "Введите eps: ";
+    std::cin >> eps;
     DoVArray(array2, n);
     PrintVArray(array2, n);
-    SortChet(array2, n);
+    Sorting(array2, n, C, eps);
     PrintVArray(array2, n);
     delete[] array2;
     }
@@ -224,10 +237,10 @@ int Sum(int array[], unsigned len) {
     return S;
 }
 
-void Men(float array2[], unsigned len) {
+void Men(float array2[], unsigned len, double C, double eps) {
     for (unsigned i = 0; i < len; i++)
-        if (array2[i] > 0)
-            array2[i] = -rand() - ((float)rand() / (float)rand());
+        if (array2[i] < C & abs(array2[i]) > eps)
+            array2[i] = 1.0 / array2[i];// - ((float)rand() / (float)rand());
 }
 
 float Poisk(float array2[], unsigned len, float x) {
@@ -256,18 +269,18 @@ void Sort(float array2[], unsigned len) {
 bool chet(float num) {
     return (int)num % 2 == 0;
 }
-void SortChet(float array2[], unsigned len) {
-    for (unsigned i = 0; i < len; i++) {
-        if (chet(array2[i])) continue;
-        for (unsigned j = i + 1; j < len; j++) {
-            if (chet(array2[j])) {
-                float buf = array2[i];
-                array2[i] = array2[j];
-                array2[j] = buf;
-            }
+
+void Sorting(float array2[], unsigned len, float C, float eps) {
+    unsigned left = 0; // Указатель для элементов, удовлетворяющих условию
+
+    for (unsigned right = 0; right < len; right++) {
+        if (abs(array2[right] - C) <= eps) {
+            swap(array2[left], array2[right]); 
+            left++; 
         }
     }
 }
+
 void QuickSort(int array[], unsigned len) {
     int i = 0, j = len - 1;
     int buf, p;

@@ -40,6 +40,7 @@ void Task9();
 int M(int n);
 int Task9_1(int n);
 
+//у паши 17 вариант
 
 int main()
 {

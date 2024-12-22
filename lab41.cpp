@@ -25,15 +25,16 @@ void Task3(float* array2, unsigned n);
 void Task4(int* array ,unsigned n);
 //вроде переделано
 void Task5(float* array2, unsigned n);
-
+//переделать
 void Task6(float* array2, unsigned n);
 void Task7(float* array2, unsigned n);
+//переделать
 void Task8(float* array2, unsigned n);
 void Task9(int* array ,unsigned n);
 void Task10(int* array ,unsigned n);
 using namespace std;
 
-//у саши 14 вариант
+
 int main() {
     setlocale(LC_ALL, "");
     int p;
@@ -224,8 +225,9 @@ int Sum(int array[], unsigned len) {
     
     for (unsigned i = 0; i < len; i++)
         if (array[i] < 0){
-            if (n1 == -1)
+            
                 n1 = i;
+                break;
         }
             
     if (n1 == -1 ) {
@@ -239,7 +241,7 @@ int Sum(int array[], unsigned len) {
 
 void Men(float array2[], unsigned len, double C, double eps) {
     for (unsigned i = 0; i < len; i++)
-        if (array2[i] < C & abs(array2[i]) > eps)
+        if (array2[i] < C && abs(array2[i]) > eps)
             array2[i] = 1.0 / array2[i];// - ((float)rand() / (float)rand());
 }
 
@@ -271,8 +273,7 @@ bool chet(float num) {
 }
 
 void Sorting(float array2[], unsigned len, float C, float eps) {
-    unsigned left = 0; // Указатель для элементов, удовлетворяющих условию
-
+    unsigned left = 0;
     for (unsigned right = 0; right < len; right++) {
         if (abs(array2[right] - C) <= eps) {
             swap(array2[left], array2[right]); 

@@ -16,6 +16,7 @@ void Task2(unsigned n, unsigned m);
 void Task3(unsigned n, unsigned m);
 void Task4(unsigned n, unsigned m);
 void Task5(unsigned n, unsigned m);
+
 int irand(int a, int b);
 float irandf(int a, int b);
 
@@ -44,6 +45,7 @@ case 4:
 case 5:
 	Task5(n, m);
 	break;
+
 
 
 }
@@ -119,11 +121,8 @@ void Task5(unsigned n, unsigned m){
     Analis(an, arr, n, m);
     PrintArray(an, 3, m);
     delete[] arr;
-    delete[] an;
-    
-    
+    delete[] an;  
 }
-
 
 void DoArray(int** arr, unsigned len, unsigned lem) {
     for (unsigned i = 0; i < len; i++)

@@ -236,19 +236,16 @@ int Task8_2(int n) {
 
 
 void Task9() {
-	int a[10], n, i;  
-	cout << "Введите число "; 
-	cin >> n;
-       
-	for(i=0; n>0; i++)    
-	{    
-		a[i]=n%2;    
-		n= n/2;  
-	}    
-	cout<<"Двоичный вид числа = ";    
-	for(i=i-1 ;i>=0 ;i--)    
-	{    
-		cout<<a[i];    
-}
+	int n;
+	cout << "Введите число "; cin >> n;
+	cout << M(n) << endl << endl;
+
+
+	while (n < 100) n += 11;
+	cout << n - 10;
 }
 
+int M(int n) {
+	if (n >= 100) return n - 10;
+	else return M(n + 11);
+}

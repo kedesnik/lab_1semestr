@@ -32,6 +32,7 @@ void Task7(float* array2, unsigned n);
 void Task8(float* array2, unsigned n);
 void Task9(int* array ,unsigned n);
 void Task10(int* array ,unsigned n);
+float irandf(int a, int b);
 using namespace std;
 
 
@@ -160,10 +161,10 @@ case 10:
     //8
     void Task8(float* array2, unsigned n){
     float C, eps;
-    std::cout << "Введите число C: ";
-    std::cin >> C;
-    std::cout << "Введите eps: ";
-    std::cin >> eps;
+    cout << "Введите число C: ";
+    cin >> C;
+    cout << "Введите eps: ";
+    cin >> eps;
     DoVArray(array2, n);
     PrintVArray(array2, n);
     Sorting(array2, n, C, eps);
@@ -208,7 +209,7 @@ void PrintArray(int array[], unsigned len) {
 }
 void DoVArray(float *array2, unsigned len) {
     for (unsigned i = 0; i < len; i++)
-        array2[i] = rand() - RAND_MAX / 2 + ((float)rand() / (float)rand());
+        array2[i] = irandf(-100, 100);
 }
 void PrintVArray(float array2[], unsigned len) {
     for (unsigned i = 0; i < len; i++)
@@ -281,7 +282,6 @@ void Sorting(float array2[], unsigned len, float C, float eps) {
         }
     }
 }
-
 void QuickSort(int array[], unsigned len) {
     int i = 0, j = len - 1;
     int buf, p;
@@ -308,6 +308,7 @@ void QuickSort(int array[], unsigned len) {
         QuickSort(&array[i], len - i);
 }
 int BinPoisk(int array[], unsigned len, int x) {
+
     int n1 = 0, n2 = len, mid;
     while (n1 <= n2) {
         mid = (n1 + n2) / 2;
@@ -319,4 +320,7 @@ int BinPoisk(int array[], unsigned len, int x) {
             n1 = mid + 1;
     }
     return -1;
+}
+float irandf(int a, int b) {
+    return ((rand() % (b - a + 1) + a) + 0.0) / ((rand() % (b - a + 1) + a) + 0.01);
 }

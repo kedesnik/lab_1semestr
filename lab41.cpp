@@ -272,7 +272,7 @@ void Sort(float array2[], unsigned len) {
 bool chet(float num) {
     return (int)num % 2 == 0;
 }
-
+//2 счётчик
 void Sorting(float array2[], unsigned len, float C, float eps) {
     unsigned left = 0;
     for (unsigned right = 0; right < len; right++) {

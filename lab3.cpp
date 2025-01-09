@@ -194,7 +194,7 @@ float Task6_2(float x, float a, float b, float c) {
         return (x-a)/pow(x-c,2) ;
     return x*x+c*c;
 }
-
+//текст до числа
 void Task7() {
 	float x;
 	int n;
@@ -211,7 +211,7 @@ double Task7_1(int n, float x) {
 	}
 	return y;
 }
-
+// из лекции
 void Task8() {
 	int a;
 	cout << "Введите число "; cin >> a;

@@ -10,13 +10,15 @@ int CountMinus(float** arr, unsigned len, unsigned lem);
 float ProChet(float** arr, unsigned len, unsigned lem);
 void Sort(float** arr, unsigned len, unsigned lem);
 void Analis(int** an, float** arr, unsigned len, unsigned lem);
+void arr_vector_col(int **arr, int *vector_col, int *res, const int n, const int m);
+void print_arr_1(int *arr, const int m);
 
 void Task1(unsigned n, unsigned m);
 void Task2(unsigned n, unsigned m);
 void Task3(unsigned n, unsigned m);
 void Task4(unsigned n, unsigned m);
 void Task5(unsigned n, unsigned m);
-
+void Task6(unsigned n, unsigned m);
 int irand(int a, int b);
 float irandf(int a, int b);
 
@@ -45,21 +47,15 @@ case 4:
 case 5:
 	Task5(n, m);
 	break;
-
+case 6:
+	Task6(n, m);
+	break;
 
 
 }
     
     
 }
-
-    /*float **arr = new float* [n];
-    for (unsigned i = 0; i < n; i++)
-        arr[i] = new float[m];
-    int **arr = new int* [n];
-    for (unsigned i = 0; i < n; i++)
-        arr[i] = new int[m];
-    */
 
 void Task1(unsigned n, unsigned m){
     //1+
@@ -124,6 +120,21 @@ void Task5(unsigned n, unsigned m){
     delete[] an;  
 }
 
+void Task6(unsigned n, unsigned m){
+    int **arr = new int *[n];
+    for(int i = 0; i < n; i++) 
+        arr[i] = new int [m];
+    int *vector_col = new int[m];
+    int *res = new int[n];
+    cout << "введите элементы вектора" << endl;
+    for (int j = 0; j < m; j++) {
+        cin >> vector_col[j];
+    }
+    cout << "умножение на вектор" << endl;
+    arr_vector_col(arr, vector_col, res, n, m);
+    print_arr_1(res, m);
+    delete[] arr;
+}
 void DoArray(int** arr, unsigned len, unsigned lem) {
     for (unsigned i = 0; i < len; i++)
         for (unsigned j = 0; j < lem; j++)
@@ -201,4 +212,19 @@ int irand(int a, int b)
 }
 float irandf(int a, int b) {
     return ((rand() % (b - a + 1) + a) + 0.0) / ((rand() % (b - a + 1) + a) + 0.01);
+}
+void arr_vector_col(int **arr, int *vector_col, int *res, const int n, const int m)
+{
+    for (int i = 0; i < n; i++) {
+        res[i] = 0;
+        for (int j = 0; j < m; j++) {
+            res[i] += arr[i][j] * vector_col[j];
+        }
+    }
+}
+void print_arr_1(int *arr, const int m)
+{
+    for(int i = 0; i < m; i++) {
+        cout << arr[i] << endl;
+    }
 }

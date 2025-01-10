@@ -6,7 +6,7 @@
 #include <string>
 #include <iomanip>
 #include <cmath>
-
+#include <chrono>
 using namespace std;
 
 void Task1();
@@ -35,11 +35,11 @@ void Task8();
 int Task8_1(int n);
 int Task8_2(int n);
 unsigned int fibb(unsigned short n);
-
+long long goodFib(int a, int k = 1, int m = 1);
 void Task9();
 int M(int n);
 int Task9_1(int n);
-
+void bin(int(n));
 //у паши 17 вариант
 
 int main()
@@ -235,17 +235,23 @@ int Task8_2(int n) {
 }
 
 
+
 void Task9() {
-	int n;
-	cout << "Введите число "; cin >> n;
-	cout << M(n) << endl << endl;
-
-
-	while (n < 100) n += 11;
-	cout << n - 10;
+	int num;
+	cout << "Введите число "; cin >> num;
+	if (num == 0) {
+        cout << "Двоичное представление: 0" << endl;
+    } else {
+        cout << "Двоичное представление: ";
+        bin(num);
+        cout << endl;
+}
+	
 }
 
-int M(int n) {
-	if (n >= 100) return n - 10;
-	else return M(n + 11);
+void bin(int n) {
+	if (n > 1) {
+		bin(n/2);
+	}
+	cout<<n%2;
 }

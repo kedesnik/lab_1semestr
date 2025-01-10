@@ -133,7 +133,8 @@ void Task6(unsigned n, unsigned m){
     cout << "умножение на вектор" << endl;
     arr_vector_col(arr, vector_col, res, n, m);
     print_arr_1(res, m);
-    delete[] arr;
+
+delete[] arr;
 }
 void DoArray(int** arr, unsigned len, unsigned lem) {
     for (unsigned i = 0; i < len; i++)

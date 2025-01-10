@@ -30,7 +30,7 @@ int main() {
     }
     //#1
     arr1(arr, n, m);
-    cout << "Целый массив: " << endl;
+    //cout << "Целый массив: " << endl;
     print_arr(arr, n, m);
     //#2
     double **arr_r = new double*[n];
@@ -38,34 +38,27 @@ int main() {
         arr_r[i] = new double[m];
     }
     arr2(arr_r, n, m);
-    cout << "Действительный массив: " << endl;
+    //cout << "Действительный массив: " << endl;
     print_arr_r(arr_r, n, m);
     //#3
-    cout << "количество вхождений максимального элемента массива " << n << "x" << m << endl;
-    cout << num_max(arr, n, m) << endl;
+    //cout << "количество вхождений максимального элемента массива " << n << "x" << m << endl;
+    //cout << num_max(arr, n, m) << endl;
     //#4
     double *res_4 = new double[n];
     odd(arr_r, res_4, m, n);
     sort_arr(arr_r, res_4, n, m);
-    cout << "Отсортированный массив: " << endl;
+    //cout << "Отсортированный массив: " << endl;
     print_arr_r(arr_r, n, m);
     //#5
     int *zero = new int[m];
     int *plus = new int[m];
     int *minus = new int[m];
-    cout << "количество нулей, отрицательных и положительных элементов вещественного массива в каждом столбце" << endl;
+    //cout << "количество нулей, отрицательных и положительных элементов вещественного массива в каждом столбце" << endl;
     count_arr(arr_r, zero, minus, plus, n, m);
     task_6_print(arr_r, n, m, minus, plus, zero);
-    //#6
-    int *vector_col = new int[m];
-    int *res = new int[n];
-    cout << "введите элементы вектора" << endl;
-    for (int j = 0; j < m; j++) {
-        cin >> vector_col[j];
-    }
-    cout << "умножение на вектор" << endl;
-    arr_vector_col(arr, vector_col, res, n, m);
-    print_arr_1(res, m);
+
+   
+    
     //#7
     int p;
     cout << "введите количество стобцов во втором массиве" << endl;
@@ -98,8 +91,7 @@ int main() {
     delete[] zero;
     delete[] minus;
     delete[] plus;
-    delete[] vector_col;
-    delete[] res;
+
     for(int j = 0; j < m; j++)
         delete[] arr_2[j];
     delete[] arr_2;
@@ -143,7 +135,7 @@ void print_arr_r(double **arr_r, const int n, const int m)
 {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cout << arr_r[i][j] << " ";
+            //cout << arr_r[i][j] << " ";
         }
         cout << endl;
     }
@@ -229,30 +221,31 @@ void task_6_print(double **arr_r, const int n, const int m, int *minus, int *plu
 {
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < m; j++) {
-            cout << arr_r[i][j] << " ";
+            //cout << arr_r[i][j] << " ";
         }
-        cout << endl;
+        //cout << endl;
     }
-    cout << endl;
-    cout << "нули" << endl;
+   // cout << endl;
+    //cout << "нули" << endl;
     for (int j = 0; j < m; j++) {
-        cout << "    ";
-        cout << zero[j] << "    ";
+        //cout << "    ";
+        //cout << zero[j] << "    ";
     }
-    cout << endl;
-    cout << "отрицательные" << endl;
+    //cout << endl;
+    //cout << "отрицательные" << endl;
     for (int j = 0; j < m; j++) {
-        cout << "    ";
-        cout << minus[j] << "    ";
+        //cout << "    ";
+        //cout << minus[j] << "    ";
     }
-    cout << endl;
-    cout << "положительные" << endl;
+    //cout << endl;
+    //cout << "положительные" << endl;
     for (int j = 0; j < m; j++) {
-        cout << "    ";
-        cout << plus[j] << "    ";
+        //cout << "    ";
+        //cout << plus[j] << "    ";
     }
-    cout << endl;
+    //cout << endl;
 }
+
 void arr_vector_col(int **arr, int *vector_col, int *res, const int n, const int m)
 {
     for (int i = 0; i < n; i++) {
